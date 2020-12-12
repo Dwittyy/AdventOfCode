@@ -1,0 +1,12 @@
+List of adapters = [A0, A1, A2, ... , An-1, An] where A0 is the port and An is the device.
+List of joltages = [J0, J1, J2, ..., Jn-1, Jn] where J0 = 0 and Jn = (Jn-1) + 3.
+Adapter Ai has joltage Ji for 0 <= i <= n.
+Assume that the list of joltages is in strictly increasing order, such that Ji-1 < Ji < Ji+1 for 0 <= i <= n.
+
+Rules:
+A0 and An must always be included.
+An-1 must always be included (as An has joltage 3 more than that).
+If (Ji-1) + 3 = (Ji) or (Ji) = (Ji+1) - 3, then Ji and (Ji-1) or (Ji+1) respectively must always be included (e.g. 121 for both, 105 for one way).
+
+
+19208 = 9604 * 2 = 4802 * 2 * 2 = 2401 * 2 * 2 * 2 = 
