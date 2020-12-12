@@ -1,4 +1,4 @@
-puzzle_input = open("Day 12/puzzleinput.txt").read().splitlines()
+puzzle_input = open("AdventOfCode2020/Day 12/puzzleinput.txt").read().splitlines()
 
 directions = {"N": (0,1,0), "E": (1,0,0), "S": (0,-1,0), "W": (-1,0,0), "R": (0,0,1), "L": (0,0,-1)} # Dictionary reference
 
