@@ -1,0 +1,10 @@
+(t + 0) mod 41 = 0
+(t + 35) mod 37 = 0
+(t + 41) mod 431 = 0
+
+t = 0 mod 41
+t = 2 mod 37
+t = (431 - 41) mod 431 = 390 mod 431
+
+
+(t + x) mod y = 0 -----> t = (y - x) mod y
