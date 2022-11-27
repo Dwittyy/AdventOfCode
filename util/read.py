@@ -1,5 +1,8 @@
-def read(year, day):
-    return open(f"{year}\Day {str(day).zfill(2)}\input.txt").read().splitlines()
+import os, __main__
 
-def read_nums(year, day):
-    return [int(x) for x in read(year, day)]
+def read_lines(test=False):
+    filename = os.path.join(os.path.dirname(__main__.__file__),"test.txt" if test else "input.txt")
+    return open(filename).read().splitlines()
+
+def read_nums(test=False):
+    return [int(x) for x in read_lines(test)]
