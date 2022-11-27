@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
-subsystem = read(2021, 10)
+subsystem = read_lines()
 
 def first_illegal_character(line):
     opened = []

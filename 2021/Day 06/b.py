@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
-initial_fish = [int(x) for x in read(2021, 6)[0].split(",")]
+initial_fish = [int(x) for x in read_lines()[0].split(",")]
 
 counts = [initial_fish.count(x) for x in range(0,7)] + [0,0]
 

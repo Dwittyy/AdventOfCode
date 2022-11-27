@@ -1,4 +1,4 @@
-puzzle_input = open("AdventOfCode2020/Day 18/puzzleinput.txt").read().splitlines()
+puzzle_input = open("AdventOfCode/2020/Day 18/puzzleinput.txt").read().splitlines()
 
 def ExtractSubExpression(expression):
     entered = 0

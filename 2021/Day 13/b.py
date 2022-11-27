@@ -1,10 +1,10 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read
+from util.read import *
 
 # Parse
-puzzle_input = read(2021, 13)
+puzzle_input = read_lines()
 splitter = puzzle_input.index("")
 dots = {(int(entry.split(",")[0]),int(entry.split(",")[1])) for entry in puzzle_input[:splitter]}
 folds = []

@@ -1,4 +1,4 @@
-puzzle_input = open("AdventOfCode2020/Day 14/puzzleinput.txt").read().splitlines()
+puzzle_input = open("AdventOfCode/2020/Day 14/puzzleinput.txt").read().splitlines()
 
 def masked(value,mask):
     value = str(bin(value).replace("0b","")).zfill(len(str(mask)))

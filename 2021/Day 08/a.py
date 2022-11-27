@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
-entries = read(2021, 8)
+entries = read_lines()
 
 count = 0
 

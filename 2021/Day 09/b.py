@@ -1,7 +1,7 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
 def parse_map(height_map):
     output = {}
@@ -10,7 +10,7 @@ def parse_map(height_map):
             output[(r,c)] = int(row[c])
     return output
 
-actual_height_map = parse_map(read(2021, 9))
+actual_height_map = parse_map(read_lines())
 
 def find_neighbours(coordinates,height_map):
     x,y = coordinates

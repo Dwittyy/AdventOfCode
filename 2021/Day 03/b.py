@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read
+from util.read import *
 
-diagnostic_report = read(2021, 3)
+diagnostic_report = read_lines()
 
 
 def frequent_bit(bits, extreme):

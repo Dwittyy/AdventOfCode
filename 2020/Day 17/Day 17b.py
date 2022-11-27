@@ -1,5 +1,5 @@
-puzzle_input = open("AdventOfCode2020/Day 17/puzzleinput.txt").read().splitlines()
-test_input = open("AdventOfCode2020/Day 17/testinput.txt").read().splitlines()
+puzzle_input = open("AdventOfCode/2020/Day 17/puzzleinput.txt").read().splitlines()
+test_input = open("AdventOfCode/2020/Day 17/testinput.txt").read().splitlines()
 
 from itertools import product
 

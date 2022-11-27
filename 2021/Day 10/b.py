@@ -1,10 +1,10 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 from statistics import median
 
-subsystem = read(2021, 10)
+subsystem = read_lines()
 
 def autocomplete(line):
     opened = []

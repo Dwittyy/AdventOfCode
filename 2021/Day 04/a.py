@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
-puzzle_input = read(2021, 4)
+puzzle_input = read_lines()
 
 # Parse Draws
 draws = [int(x) for x in puzzle_input.pop(0).split(",")]

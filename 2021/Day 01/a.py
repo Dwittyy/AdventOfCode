@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read_nums
+from util.read import *
 
-measurements = read_nums(2021, 1)
+measurements = read_nums()
 
 
 def count_increases(nums):

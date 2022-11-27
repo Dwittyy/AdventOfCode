@@ -1,11 +1,11 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
 from statistics import median
 
-positions = [int(x) for x in read(2021, 7)[0].split(",")]
+positions = [int(x) for x in read_lines()[0].split(",")]
 
 def find_median(values):
     m = int(median(values))

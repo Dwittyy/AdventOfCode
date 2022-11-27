@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
-height_map = read(2021, 9)
+height_map = read_lines()
 
 def parse_map(height_map):
     output = {}

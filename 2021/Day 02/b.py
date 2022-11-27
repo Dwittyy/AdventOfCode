@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
-instructions = read(2021, 2)
+instructions = read_lines()
 
 
 def parse_instruction(instruction):

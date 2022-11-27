@@ -1,4 +1,4 @@
-puzzle_input = open("AdventOfCode2020/Day 19/puzzleinput.txt").read().splitlines()
+puzzle_input = open("AdventOfCode/2020/Day 19/puzzleinput.txt").read().splitlines()
 
 def FormatInput(input):
     rules = dict()

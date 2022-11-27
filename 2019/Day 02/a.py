@@ -1,7 +1,7 @@
 import sys, os
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
-from util.time import timer
+from util.read import *
+from util.run import run
 
 def run_program(opcodes,pos=0):
     code = opcodes[pos]
@@ -15,13 +15,12 @@ def run_program(opcodes,pos=0):
     pos += 4
     run_program(opcodes, pos)        
 
-@timer
+@run
 def solve():
-    opcodes = [int(x) for x in read(2019, 2)[0].split(',')]
+    opcodes = [int(x) for x in read_lines()[0].split(',')]
     opcodes[1] = 12
     opcodes[2] = 2
     run_program(opcodes)
-    print(opcodes)
-    return
+    return opcodes
 
 solve()

@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
-puzzle_input = read(2021, 5)
+puzzle_input = read_lines()
 
 def parse_line(line):
     return_line = []

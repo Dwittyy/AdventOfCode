@@ -1,11 +1,11 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read
+from util.read import *
 from collections import Counter
 
 # Parse
-puzzle_input = read(2021, 14)
+puzzle_input = read_lines()
 template = puzzle_input[0]
 rules = {rule.split(" -> ")[0] : rule.split(" -> ")[1] for rule in puzzle_input[2:]}
 

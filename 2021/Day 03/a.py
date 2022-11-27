@@ -1,9 +1,9 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
-diagnostic_report = read(2021, 3)
+diagnostic_report = read_lines()
 
 
 def most_frequent_bit(bits):

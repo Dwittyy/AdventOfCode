@@ -1,7 +1,7 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read
+from util.read import *
 import networkx as nx
 
 G = nx.Graph()

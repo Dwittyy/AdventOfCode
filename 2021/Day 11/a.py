@@ -1,7 +1,7 @@
 import sys, os
 
 sys.path.append(os.getcwd())
-from util.read import read, read_nums
+from util.read import *
 
 def parse(levels):
     output = {}
@@ -10,7 +10,7 @@ def parse(levels):
             output[(r,c)] = int(row[c])
     return output
 
-energy_levels = parse(read(2021, 11))
+energy_levels = parse(read_lines())
 
 def neighbours(levels,octopus):
     x,y = octopus
