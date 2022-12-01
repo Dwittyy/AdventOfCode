@@ -7,7 +7,7 @@ from util.run import run
 def solve():
     elf_calories = []
     elf_calorie = []
-    for calorie in read_lines(test=True):
+    for calorie in read_lines():
         if calorie != "":
             elf_calorie.append(int(calorie))
         else:
