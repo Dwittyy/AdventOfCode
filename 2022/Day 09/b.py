@@ -3,38 +3,35 @@ sys.path.append(os.getcwd())
 from util.read import *
 from util.run import run
 
-directions = {"U": (0,1), "D": (0, -1), "R": (1, 0), "L": (-1, 0)}
+dirs = {"U": (0,1), "D": (0, -1), "R": (1, 0), "L": (-1, 0)}
+
+def move(p, d):
+    return (p[0] + d[0], p[1] + d[1])
 
 def drag(dragger,dragee):
-    diff = (dragger[0] - dragee[0],dragger[1] - dragee[1])
+    diff = (dragger[0] - dragee[0], dragger[1] - dragee[1])
 
-    if diff in [(0,2), (0,-2), (2,0), (-2,0)]:
-        new_dragee = (dragee[0] + int(diff[0] / 2), dragee[1] + int(diff[1] / 2))
-
-    elif diff in [(2,1), (2, -1), (-2, 1), (-2, -1), (1, 2), (-1, 2), (1, -2), (-1, -2), (2, 2), (2, -2), (-2, 2), (-2, -2)]:
-        new_diff = [int(x/abs(x)) for x in diff]
-        new_dragee = (dragee[0] + new_diff[0], dragee[1] + new_diff[1])
-
-    else:
-        new_dragee = dragee
-
-    return new_dragee
-
+    if abs(diff[0]) <= 1 and abs(diff[1]) <= 1:
+        return dragee
+        
+    direction = [(int(x/abs(x) if x != 0 else 0)) for x in diff]
+    return move(dragee, direction)
+    
 @run
 def solve():
-    knots = {i: (0,0) for i in range(0,10)}
+    knots = [(0,0) for _ in range(0,10)]
     tail_visited = set()
     for motion in read_lines():
-        direction, amount = motion.split()
-        direction = directions[direction]
-        amount = int(amount)
+        char, num = motion.split()
+        direction = dirs[char]
+        amount = int(num)
 
         for _ in range(amount):
-            knots[0] = (knots[0][0] + direction[0], knots[0][1] + direction[1])
+            knots[0] = move(knots[0], direction)
             for k in range(1,10):
                 knots[k] = drag(knots[k-1], knots[k])
-            tail_visited.add(knots[9])
-            
+            tail_visited.add(knots[-1])
+
     return len(tail_visited)
 
 solve()
