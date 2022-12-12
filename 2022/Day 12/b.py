@@ -14,19 +14,18 @@ def solve():
     width = len(heightmap[0])
     height = len(heightmap)
     ends = dict()
-    for row in range(height):
-        for col in range(width):
-            if heightmap[row][col] in ("S","E"):
-                ends[heightmap[row][col]] = (row,col)
-            for nr, nc in ((row-1,col),(row+1,col),(row,col-1),(row,col+1)):
-                if (nr in range(height)) and (nc in range(width)) and (elevation(heightmap[nr][nc]) <= elevation(heightmap[row][col]) + 1):
-                    g.add_edge((row,col),(nr,nc))
-            else:
-                g.add_node((row,col))
+    for r in range(height):
+        for c in range(width):
+            if heightmap[r][c] in ("S","E"):
+                ends[heightmap[r][c]] = (r,c)
+
+            for nr, nc in ((r-1,c),(r+1,c),(r,c-1),(r,c+1)):
+                if (nr in range(height)) and (nc in range(width)) and (elevation(heightmap[nr][nc]) <= elevation(heightmap[r][c]) + 1):
+                    g.add_edge((r,c),(nr,nc))
 
     shortest = 2 * width * height
     for n in g:
-        if heightmap[n[0]][n[1]] == "a" and nx.has_path(g, n, ends["E"]):
+        if elevation(heightmap[n[0]][n[1]]) == elevation("a") and nx.has_path(g, n, ends["E"]):
             shortest = min(shortest,nx.shortest_path_length(g,source=n,target=ends["E"]))
 
     return shortest
