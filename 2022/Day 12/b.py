@@ -24,9 +24,10 @@ def solve():
                     g.add_edge((r,c),(nr,nc))
 
     shortest = 2 * width * height
+    paths = nx.shortest_path_length(g,target=ends["E"])
     for n in g:
-        if elevation(heightmap[n[0]][n[1]]) == elevation("a") and nx.has_path(g, n, ends["E"]):
-            shortest = min(shortest,nx.shortest_path_length(g,source=n,target=ends["E"]))
+        if elevation(heightmap[n[0]][n[1]]) == elevation("a") and n in paths:
+            shortest = min(shortest,paths[n])
 
     return shortest
 
