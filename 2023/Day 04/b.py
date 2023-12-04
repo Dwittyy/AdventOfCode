@@ -22,7 +22,7 @@ def solve():
         if card not in copies:
             copies[card] = 1
         for i in range(card, card + matches):
-            copies[i + 1] = copies.get(i + 1, 1) + (1 * copies.get(card, 1))
+            copies[i + 1] = copies.get(i + 1, 1) + copies.get(card, 1)
 
     return sum(copies.values())
 

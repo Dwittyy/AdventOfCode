@@ -20,7 +20,7 @@ def solve():
         card, (winning, held) = parse_card(line)
         matches = len(winning & held)
         if matches > 0:
-            total_points += 1 * pow(2, matches - 1)
+            total_points += pow(2, matches - 1)
     return total_points
 
 solve()
