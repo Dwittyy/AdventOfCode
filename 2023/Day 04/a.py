@@ -15,18 +15,12 @@ def parse_card(line):
 
 @run
 def solve():
-    lines = read_lines()
-    cards = dict()
-    for line in lines:
-        card, numbers = parse_card(line)
-        cards[card] = numbers
     total_points = 0
-    for card in cards:
-        winning, held = cards[card]
-        matches = len(winning.intersection(held))
+    for line in read_lines():
+        card, (winning, held) = parse_card(line)
+        matches = len(winning & held)
         if matches > 0:
             total_points += 1 * pow(2, matches - 1)
-
     return total_points
 
 solve()

@@ -2,7 +2,6 @@ import sys, os
 sys.path.append(os.getcwd())
 from util.read import *
 from util.run import run
-from collections import defaultdict
 
 def parse_numbers(numbers):
     numbers = set([int(x) for x in numbers.split(' ') if x.isdigit()])
@@ -16,19 +15,14 @@ def parse_card(line):
 
 @run
 def solve():
-    lines = read_lines()
-    cards = dict()
-    for line in lines:
-        card, numbers = parse_card(line)
-        cards[card] = numbers
-    copies = defaultdict(lambda: 1)
-    for card in cards:
+    copies = dict()
+    for line in read_lines():
+        card, (winning, held) = parse_card(line)
+        matches = len(winning & held)
         if card not in copies:
             copies[card] = 1
-        winning, held = cards[card]
-        matches = len(winning.intersection(held))
         for i in range(card, card + matches):
-            copies[i + 1] += 1 * copies.get(card,1)
+            copies[i + 1] = copies.get(i + 1, 1) + (1 * copies.get(card, 1))
 
     return sum(copies.values())
 
